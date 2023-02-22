@@ -7,6 +7,8 @@ import "./components/inputNumber/InNumber";
 import InNumber from "./components/inputNumber/InNumber";
 import SimpleButton from "./components/simpleButton/SimpleButton";
 
+import { ValidAndCompare } from "./Utils/Fuction/UserFun";
+
 function App() {
 	const [inputValue, setInputValue] = useState("");
 
@@ -27,7 +29,7 @@ function App() {
 					onChangeInput={handleOnChange}
 				/>
 				<SimpleButton labelButton='Draw' />
-				<p>Result: {inputValue}</p>
+				<p>{ValidAndCompare(inputValue)}</p>
 			</div>
 		</div>
 	);
