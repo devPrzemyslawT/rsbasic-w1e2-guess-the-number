@@ -11,6 +11,11 @@ import { ValidAndCompare } from "./Utils/Fuction/UserFun";
 
 function App() {
 	const [inputValue, setInputValue] = useState("");
+	const [drawValue, setDrawValue] = useState("Enter number");
+
+	const handleOnClick = event => {
+		setDrawValue(ValidAndCompare(inputValue));
+	};
 
 	const handleOnChange = event => {
 		setInputValue(event.target.value);
@@ -28,8 +33,8 @@ function App() {
 					placeholder='Enter number...'
 					onChangeInput={handleOnChange}
 				/>
-				<SimpleButton labelButton='Draw' />
-				<p>{ValidAndCompare(inputValue)}</p>
+				<SimpleButton labelButton='Draw' onClickButton={handleOnClick} />
+				<p>{drawValue}</p>
 			</div>
 		</div>
 	);
