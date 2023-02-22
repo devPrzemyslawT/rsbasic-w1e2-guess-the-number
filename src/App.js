@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -6,6 +8,12 @@ import InNumber from "./components/inputNumber/InNumber";
 import SimpleButton from "./components/simpleButton/SimpleButton";
 
 function App() {
+	const [inputValue, setInputValue] = useState("");
+
+	const handleOnChange = event => {
+		setInputValue(event.target.value);
+	};
+
 	return (
 		<div className='App'>
 			<header className='App-header'>
@@ -14,9 +22,12 @@ function App() {
 			</header>
 			<div className='App-body'>
 				<p>Enter number from 1 to 10: </p>
-				<InNumber placeholder='Enter number...'/>
+				<InNumber
+					placeholder='Enter number...'
+					onChangeInput={handleOnChange}
+				/>
 				<SimpleButton labelButton='Draw' />
-				<p>Result:</p>
+				<p>Result: {inputValue}</p>
 			</div>
 		</div>
 	);
