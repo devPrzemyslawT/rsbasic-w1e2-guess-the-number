@@ -1,0 +1,15 @@
+.simpleButton {
+	height: 30px;
+	width: 150px;
+	color: #282c34;
+	background-color: #ddd;
+    border: 1px solid white;
+	border-radius: 8px;
+	font-size: 16px;
+	transition: background-color 0.5s;
+}
+
+.simpleButton:hover {
+	color: white;
+	background-color: #282c34;
+}
