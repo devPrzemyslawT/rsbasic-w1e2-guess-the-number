@@ -1,6 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 
+import "./components/inputNumber/InNumber";
+import InNumber from "./components/inputNumber/InNumber";
+
 function App() {
 	return (
 		<div className='App'>
@@ -10,7 +13,7 @@ function App() {
 			</header>
 			<div className='App-body'>
 				<p>Enter number from 1 to 10: </p>
-				<input type='number'></input>
+				<InNumber placeholder='Enter number...'></InNumber>
 				<button>DRAW</button>
 				<p>Result:</p>
 			</div>
